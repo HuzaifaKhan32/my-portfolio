@@ -1,0 +1,42 @@
+[
+    {
+        "thumbnail": "/password-strength.jpeg",
+        "title": "Password Strength Meter",
+        "links":{
+            "label": "Password-strength",
+        "url": "https://password-strength-meter-by-huzaifa.streamlit.app/"
+        },
+        "description": "Developed a password strength meter which check whether the given password is strong or not. Also, generates the strong password",
+        "languageIcons": ["js_icon.png", "css_icon.png", "html_icon.png"]
+    },
+    {
+        "thumbnail": "/unit-converter.png",
+        "title": "Unit Converter",
+        "links":{
+            "label": "Unit-converter",
+        "url": "https://unit-converter-by-huzaifa.streamlit.app/"
+        },
+        "description": "Developed a unit converter app with streamlit and python. This app converts many units",
+        "languageIcons": ["js_icon.png", "css_icon.png", "html_icon.png"]
+    },
+    {
+        "thumbnail": "/data-encryption.jpg",
+        "title": "Data Encryption",
+        "links":{
+            "label": "Data.encrypt",
+        "url": "https://secure-data-encrypt.streamlit.app/"
+        },
+        "description": "Developed a secure data encryption app which allows to registan an account, login, store data, and you can retrieve your data by your secret key",
+        "languageIcons": ["js_icon.png", "css_icon.png", "html_icon.png"]
+    },
+    {
+        "thumbnail": "/Weather_Thumbnail.png",
+        "title": "Weather Dashboard",
+        "links":{
+            "label": "Weather.dash",
+        "url": "www.example.com"
+        },
+        "description": "Developed a weather dashboard which fetches data from a real-time API.",
+        "languageIcons": ["js_icon.png", "css_icon.png", "html_icon.png"]
+    }
+]
