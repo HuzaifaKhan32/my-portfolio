@@ -12,7 +12,7 @@ type ContactFormData = {
   recaptchaToken?: string; // Optional if using reCAPTCHA
 };
 
-function page() {
+function Page() {
   const {
     register,
     handleSubmit,
@@ -45,6 +45,7 @@ function page() {
         setSubmitStatus("error");
       }
     } catch (error) {
+      console.error("Submission error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -159,4 +160,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
