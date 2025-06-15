@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
-import { animate, motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 interface RevealProps {
     children: React.ReactNode;

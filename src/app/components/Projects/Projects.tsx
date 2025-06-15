@@ -14,9 +14,8 @@ function Projects() {
             <SectionHeader plainText='😎 Some of my' highlightText='Best Works' />
             <div className='w-full max-w-[calc(100%-44px)] mx-auto grid grid-col-1 justify-items-center lg:grid-cols-2 gap-10'>
                 {projects.map((project, id) => (
-                  <Reveal initialX={id % 2 === 0 ? -60 : 60} delay={0.5}>
+                  <Reveal initialX={id % 2 === 0 ? -60 : 60} delay={0.5} key={id}>
                     <Project
-                    key={id}
                     title={project.title}
                     links={project.links}
                     languageIcon={project.languageIcons}
