@@ -12,26 +12,26 @@ function About() {
         <div className="md:w-1/2 w-full mx-auto max-w-[calc(100%-44px)] md:max-w-none flex flex-col gap-3 md:gap-5 md:text-lg md:justify-start justify center">
           <Reveal initialY={-40}>
             <p className="text-center md:text-left">
-              {`I'm a passionate Frontend Developer specializing in Next.js, with
+              I&apos;m a passionate Frontend Developer specializing in Next.js, with
               a strong foundation in modern web technologies like HTML, CSS,
               JavaScript, and TypeScript. I also have experience with Python and
-              have worked with Streamlit for building interactive applications.`}
+              have worked with Streamlit for building interactive applications.
             </p>
           </Reveal>
           <Reveal initialY={-25} delay={0.2}>
             <p className="text-center md:text-left">
-              {`When I'm not coding, I enjoy exploring new tech trends,
+              When I&apos;m not coding, I enjoy exploring new tech trends,
               contributing to open-source projects, and continuously learning to
-              stay ahead in this fast-evolving industry.`}
+              stay ahead in this fast-evolving industry.
             </p>
           </Reveal>
           <Reveal initialY={-15} delay={0.4}>
             <p className="text-center md:text-left">
-              {`Currently, I'm expanding my skills into the exciting world of
+              Currently, I&apos;m expanding my skills into the exciting world of
               Artificial Intelligence through the Governor Initiative for AI &
               Computing (GIAIC). My goal is to bridge the gap between frontend
               development and AI, creating intelligent, user-friendly web
-              applications.`}
+              applications.
             </p>
           </Reveal>
         </div>
