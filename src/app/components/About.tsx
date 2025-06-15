@@ -28,7 +28,7 @@ function About() {
           <Reveal initialY={-15} delay={0.4}>
             <p className="text-center md:text-left">
               Currently, I&apos;m expanding my skills into the exciting world of
-              Artificial Intelligence through the Governor Initiative for AI &
+              Artificial Intelligence through the Governor Initiative for AI &amp;
               Computing (GIAIC). My goal is to bridge the gap between frontend
               development and AI, creating intelligent, user-friendly web
               applications.

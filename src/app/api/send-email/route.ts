@@ -6,7 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 export async function POST(request: Request) {
     try {
       const { name, email, message } = await request.json();
-  
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { data, error } = await resend.emails.send({
         from: "Portfolio Contact <onboarding@resend.dev>",
         to: ["huzaifakhan0856551@gmail.com"], 
