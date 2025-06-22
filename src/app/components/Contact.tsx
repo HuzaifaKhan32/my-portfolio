@@ -46,52 +46,37 @@ function Contact() {
           </Link>
         </div>
         <div className="flex gap-2 justify-center">
-          <Link href={"www.github.com/HuzaifaKhan32"}>
+          <Link href={"https://github.com/HuzaifaKhan32"}>
             <Image
-              src={"/github_logo.svg"}
+              src={"/github.png"}
               alt="github icon"
-              width={14}
-              height={17}
+              width={32}
+              height={32}
               className="dark:hidden"
             />
             <Image
-              src={"/github_logo_dark.svg"}
+              src={"/github_dark.png"}
               alt="github icon"
-              width={17}
-              height={17}
+              width={32}
+              height={32}
               className="hidden dark:block"
             />
           </Link>
-          <Link href={"www.instagram.com/hzaifa_nadeem"}>
+          <Link href={"https://www.instagram.com/hzaifa_nadeem/"}>
             <Image
-              src={"/instagram_logo.svg"}
+              src={"/instagram.png"}
               alt="github icon"
-              width={14}
-              height={17}
-              className="dark:hidden"
-            />
-            <Image
-              src={"/instagram_logo_dark.svg"}
-              alt="github icon"
-              width={14}
-              height={17}
-              className="hidden dark:block"
+              width={32}
+              height={32}
+              
             />
           </Link>
           <Link href={"www.linkedin.com/"}>
             <Image
-              src={"/linked_logo.svg"}
+              src={"/linkedIn.png"}
               alt="github icon"
-              width={14}
-              height={17}
-              className="dark:hidden"
-            />
-            <Image
-              src={"/linked_logo.svg"}
-              alt="github icon"
-              width={14}
-              height={17}
-              className="hidden dark:block"
+              width={32}
+              height={32}
             />
           </Link>
         </div>

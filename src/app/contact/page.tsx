@@ -2,10 +2,12 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import {motion} from "framer-motion"
 
 
 type ContactFormData = {
-  name: string;
+  fname: string;
+  lname?: string;
   email: string;
   message: string;
   phoneNumber?: string;
@@ -72,15 +74,16 @@ function Page() {
               type="text"
               placeholder="First Name"
               className="contact-styling"
-              {...register("name", { required: "First name is required" })}
+              {...register("fname", { required: "First name is required" })}
             />
-            {errors.name && (
-              <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+            {errors.fname && (
+              <p className="mt-1 text-sm text-red-600">{errors.fname.message}</p>
             )}
             <input
               type="text"
               placeholder="Last Name"
               className="contact-styling"
+              {...register("lname")}
             />
           </div>
           <input
@@ -102,6 +105,7 @@ function Page() {
             type="text"
             placeholder="Phone Number"
             className="contact-styling"
+            {...register("phoneNumber")}
           />
           <textarea
             placeholder="Message"
@@ -117,9 +121,11 @@ function Page() {
             {isSubmitting ? "Sending..." : "Send Message"}
           </button>
           {submitStatus === "success" && (
-            <p className="absolute left-1/2 -translate-x-1/2 top-2 mt-2 text-sm bg-green-600 px-4 py-7 rounded-lg">
+            <motion.p
+            initial={{y: ""}} 
+            className="absolute left-1/2 -translate-x-1/2 top-2 mt-2 text-sm bg-green-600 px-4 py-7 rounded-lg">
               Message sent successfully! 🎉
-            </p>
+            </motion.p>
           )}
           {submitStatus === "error" && (
             <p className="absolute left-1/2 -translate-x-1/2 top-2 mt-2 text-sm bg-red-600 px-4 py-7 text-white rounded-lg">

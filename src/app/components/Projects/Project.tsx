@@ -66,6 +66,7 @@ function Project({
           style={{
             transform: "translateZ(100px)"
           }}
+          loading="lazy"
         />
         <div className="flex justify-between items-center gap-4">
           <h2 className="text-xl font-semibold text-nowrap truncate">{title}</h2>
