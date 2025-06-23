@@ -45,6 +45,7 @@ function Page() {
         body: JSON.stringify(data),
       });
       if (response.ok) {
+        reset()
         setSubmitStatus("success");
         triggerMessage();
       } else {
