@@ -2,8 +2,8 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import {motion} from "framer-motion"
-
+import { motion } from "framer-motion";
+import Spinner from "../components/Spinner";
 
 type ContactFormData = {
   fname: string;
@@ -26,9 +26,16 @@ function Page() {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+  const [showMessage, setShowMessage] = useState<boolean>(false);
+  const triggerMessage = () => {
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 3000);
+  };
 
   const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
-    setIsSubmitting(true)
+    setIsSubmitting(true);
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
@@ -39,16 +46,15 @@ function Page() {
       });
       if (response.ok) {
         setSubmitStatus("success");
-        setTimeout(() => {
-          reset();
-          setSubmitStatus("idle");
-        }, 3000)}
-        else {
+        triggerMessage();
+      } else {
         setSubmitStatus("error");
+        triggerMessage();
       }
     } catch (error) {
       console.error("Submission error:", error);
       setSubmitStatus("error");
+      triggerMessage();
     } finally {
       setIsSubmitting(false);
     }
@@ -59,7 +65,7 @@ function Page() {
       <div className="card h-auto w-auto px-7 py-10 flex flex-col flex-wrap">
         <h2 className="text-4xl font-bold pb-6 text-center ">
           {"Get in "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] to-[#763AF5]">
+          <span className="dark:text-transparent bg-clip-text bg-gradient-to-r dark:from-[#FFFFFF] dark:to-[#763AF5]">
             touch
           </span>
           ✨
@@ -77,7 +83,9 @@ function Page() {
               {...register("fname", { required: "First name is required" })}
             />
             {errors.fname && (
-              <p className="mt-1 text-sm text-red-600">{errors.fname.message}</p>
+              <p className="mt-1 text-sm text-red-600">
+                {errors.fname.message}
+              </p>
             )}
             <input
               type="text"
@@ -116,21 +124,35 @@ function Page() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-gradient-to-r from-[#763AF5] to-[#A604F2] contact-styling"
+            className="bg-gradient-to-r from-[#763AF5] to-[#A604F2] contact-styling text-white text-lg flex justify-center items-center"
           >
-            {isSubmitting ? "Sending..." : "Send Message"}
+            {isSubmitting ? <Spinner /> : "Send Message"}
           </button>
-          {submitStatus === "success" && (
-            <motion.p
-            initial={{y: ""}} 
-            className="absolute left-1/2 -translate-x-1/2 top-2 mt-2 text-sm bg-green-600 px-4 py-7 rounded-lg">
-              Message sent successfully! 🎉
-            </motion.p>
+          {showMessage && submitStatus == "success" && (
+            <div className="absolute top-2 left-0 right-0 flex justify-center z-10">
+              <motion.p
+                initial={{ y: "-200%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-200%" }}
+                transition={{ duration: 0.5 }}
+                className="mt-2 text-sm bg-green-400 px-4 py-7 rounded-lg"
+              >
+                Message sent successfully! 🎉
+              </motion.p>
+            </div>
           )}
-          {submitStatus === "error" && (
-            <p className="absolute left-1/2 -translate-x-1/2 top-2 mt-2 text-sm bg-red-600 px-4 py-7 text-white rounded-lg">
-              Failed to send. Please try again.
-            </p>
+          {showMessage && submitStatus == "error" && (
+            <div className="absolute top-2 left-0 right-0 flex justify-center z-10">
+              <motion.p
+                initial={{ y: "-200%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-200%" }}
+                transition={{ duration: 0.5 }}
+                className="mt-2 text-sm bg-red-500 px-4 py-7 rounded-lg"
+              >
+                Failed to send. Please try again later.
+              </motion.p>
+            </div>
           )}
         </form>
       </div>
