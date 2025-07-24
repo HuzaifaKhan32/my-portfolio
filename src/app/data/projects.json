@@ -1,5 +1,15 @@
 [
     {
+        "thumbnail": "/shopcart.PNG",
+        "title": "Full-stack e-commerce website",
+        "links":{
+            "label": "Full-stack",
+        "url": "https://full-stack-e-commerce-hk.vercel.app/"
+        },
+        "description": "Developed a weather dashboard which fetches data from a real-time API.",
+        "languageIcon": ["js_icon.png", "css_icon.png", "html_icon.png"]
+    },
+    {
         "thumbnail": "/password-strength.jpeg",
         "title": "Password Strength Meter",
         "links":{
@@ -28,15 +38,6 @@
         },
         "description": "Developed a secure data encryption app which allows to registan an account, login, store data, and you can retrieve your data by your secret key",
         "languageIcon": ["js_icon.png", "css_icon.png", "html_icon.png"]
-    },
-    {
-        "thumbnail": "/Weather_Thumbnail.png",
-        "title": "Weather Dashboard",
-        "links":{
-            "label": "Weather.dash",
-        "url": "www.example.com"
-        },
-        "description": "Developed a weather dashboard which fetches data from a real-time API.",
-        "languageIcon": ["js_icon.png", "css_icon.png", "html_icon.png"]
     }
+    
 ]
